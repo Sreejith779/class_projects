@@ -1,11 +1,9 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
-class MyTextThemes{
-
+class MyTextThemes {
   static TextStyle textHeading = GoogleFonts.cabin(
     fontSize: 20,
-  ) as TextStyle;
-
+  );
 }

@@ -9,13 +9,13 @@ class SignUpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController passController = TextEditingController();
     TextEditingController emailController = TextEditingController();
-    var FormKey = GlobalKey<FormState>();
+    var formKey = GlobalKey<FormState>();
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.only(top: 40),
           child: Form(
-            key: FormKey,
+            key: formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -54,7 +54,7 @@ class SignUpPage extends StatelessWidget {
                       TextFormField(
                         controller: emailController,
                         validator: (email){
-                          if(email==null || email!.contains('@')){
+                          if(email==null || !email.contains('@')){
                             return 'email is not valid';
                           }else{
                             return null;
@@ -91,7 +91,7 @@ class SignUpPage extends StatelessWidget {
                         validator: (confirmPass){
                           if(confirmPass != passController.text){
                             return "password must be same";
-        
+
                           }else{
                             return null;
                           }
@@ -108,7 +108,7 @@ class SignUpPage extends StatelessWidget {
                       Center(
                           child: MaterialButton(
                         onPressed: () {
-                          var validate = FormKey.currentState!.validate();
+                          var validate = formKey.currentState!.validate();
                         if(validate==true){
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
                         }else{
@@ -128,7 +128,7 @@ class SignUpPage extends StatelessWidget {
                         children: [
                           Text("have an account?"),
                           TextButton(onPressed: (){
-        
+
                           },
                               child: Text(
                                 " Login",
