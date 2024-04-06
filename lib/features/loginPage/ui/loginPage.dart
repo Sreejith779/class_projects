@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:sample1/features/homePage/ui/homePage.dart';
+import 'package:sample1/utils/const.dart';
 import 'package:sample1/utils/textTheme.dart';
 
 import '../../signUpPage/ui/signUpPage.dart';
 
 class LoginPage extends StatelessWidget {
+
   TextEditingController passController = TextEditingController();
   var formKey = GlobalKey<FormState>();
+
+    String username = "Sreejith@";
+    int pass = 123456;
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -18,11 +30,10 @@ class LoginPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                 Center(
+                Center(
                     child: Text(
                   "Login",
-                  style:
-                  MyTextThemes.textHeading
+                  style: MyTextThemes.textHeading,
                   // TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
                 )),
                 const SizedBox(
@@ -43,6 +54,7 @@ class LoginPage extends StatelessWidget {
                         height: 5,
                       ),
                       TextFormField(
+                        controller: emailController,
                         validator: (email) {
                           if (email!.isEmpty || !email.contains('@')) {
                             return "email must be a valid email";
@@ -60,6 +72,7 @@ class LoginPage extends StatelessWidget {
                         height: 25,
                       ),
                       TextFormField(
+                        controller: passwordController,
                         validator: (pass) {
                           if (pass!.isEmpty && pass.length < 4) {
                             return "password is empty";
@@ -80,10 +93,12 @@ class LoginPage extends StatelessWidget {
                           child: MaterialButton(
                         onPressed: () {
                           var validate = formKey.currentState!.validate();
-                          if (validate == true) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text("Login Sucessfully")));
+                          if (validate == true  && passController == passController) {
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+                          }else{
+                            errorSnackBar(context);
                           }
+                          passwordController.clear();
                         },
                         minWidth: 150,
                         shape: const StadiumBorder(),
