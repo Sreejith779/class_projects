@@ -4,6 +4,7 @@ import 'package:sample1/features/gridview/staggered_grid.dart';
 import 'package:sample1/features/homePage/ui/homePage.dart';
 import 'package:sample1/features/listView_seperated/listView.dart';
 import 'package:sample1/features/loginPage/ui/loginPage.dart';
+import 'package:sample1/features/shoeStore/shoeStore.dart';
 import 'package:sample1/features/shopApp/shopApp.dart';
 import 'package:sample1/features/splashPage/ui/splashScreen.dart';
 import 'package:sample1/features/splashScreen.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: StagGrid()
+      home: ShoeStore()
     );
   }
 }
