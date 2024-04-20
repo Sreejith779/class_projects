@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sample1/features/gridview/gridview.dart';
+import 'package:sample1/features/gridview/staggered_grid.dart';
 import 'package:sample1/features/homePage/ui/homePage.dart';
 import 'package:sample1/features/listView_seperated/listView.dart';
 import 'package:sample1/features/loginPage/ui/loginPage.dart';
@@ -22,8 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:ShopApp(
-      )
+      home: StagGrid()
     );
   }
 }

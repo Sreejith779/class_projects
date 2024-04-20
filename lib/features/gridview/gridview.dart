@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Gridvieww extends StatefulWidget {
-  const Gridvieww({super.key});
+class Countries extends StatefulWidget {
+  const Countries({super.key});
 
   @override
-  State<Gridvieww> createState() => _GridviewwState();
+  State<Countries> createState() => _CountriesState();
 }
 
-class _GridviewwState extends State<Gridvieww> {
+class _CountriesState extends State<Countries> {
 
    List<Map<String,dynamic>>counties = [
     {"country": "India",
