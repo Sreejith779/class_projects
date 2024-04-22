@@ -47,7 +47,7 @@ class ShoeStore extends StatelessWidget {
             indicatorColor: Colors.white,
             surfaceTintColor: Colors.white,
             selectedIndex: 1,
-            destinations: [
+            destinations: const [
               NavigationDestination(icon: Icon(Icons.home), label: "Home"),
               NavigationDestination(icon: Icon(Icons.search_outlined), label: "Search"),
               NavigationDestination(icon: Icon(Icons.favorite_outline), label: "Favorite"),

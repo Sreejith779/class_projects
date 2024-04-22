@@ -4,4 +4,5 @@ class ShoeModel{
   final int price;
 
   ShoeModel({required this.title, required this.type, required this.price});
+
 }

@@ -9,6 +9,7 @@ import 'package:sample1/features/shopApp/shopApp.dart';
 import 'package:sample1/features/splashPage/ui/splashScreen.dart';
 import 'package:sample1/features/splashScreen.dart';
 
+import 'features/drawer/drawer.dart';
 import 'features/slivers/sliverse.dart';
 
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ShoeStore()
+      home: Drawers()
     );
   }
 }
