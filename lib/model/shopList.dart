@@ -1,4 +1,4 @@
-final List<Map<String, dynamic>> gridViewItems = [
+final List<Map<String, dynamic>> shopLists = [
   {
     'img': 'https://storage.comprasmartphone.com/smartphones/apple-iphone-14-pro.png',
     'productName': 'iPhone 15 pro',

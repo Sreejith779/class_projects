@@ -13,7 +13,7 @@ class ShopApp extends StatefulWidget {
 
 class _ShopAppState extends State<ShopApp> {
 
-  final List<Products>shopList = gridViewItems.map((e) =>
+  final List<Products>shopList = shopLists.map((e) =>
   Products(img: e['img'], productName: e['productName'],
       productType: e['productType'], price: e['price'],
       oldPrice: e['oldPrice'], offPrice: e['offPrice'])).toList();

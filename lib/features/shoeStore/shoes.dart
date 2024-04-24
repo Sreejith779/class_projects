@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sample1/features/screens/screen1.dart';
 import 'package:sample1/features/shoeStore/shoeModel.dart';
 
 
@@ -45,35 +46,42 @@ body: Padding(
         childAspectRatio: 0.58),
         itemCount: shoes.length,
         itemBuilder: (context,index){
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            margin: EdgeInsets.all(5),
-            height: 200,
-            width: 200,
-            decoration: BoxDecoration(
-              image: DecorationImage(image: NetworkImage(shoes[index]["image"]),
-              fit: BoxFit.fill)
-            ),
+      return InkWell(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>Screen1(ShoeModel: shoes[index])));
+        },
+        child: Container(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                margin: EdgeInsets.all(5),
+                height: 200,
+                width: 200,
+                decoration: BoxDecoration(
+                  image: DecorationImage(image: NetworkImage(shoes[index]["image"]),
+                  fit: BoxFit.fill)
+                ),
+              ),
+              Text(shoes[index]["tittle"],
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w700
+              ),),
+              Expanded(child: Text(shoes[index]["type"],
+              style: const TextStyle(
+                color: Colors.grey
+              ),)),
+              Text("\$ ${shoes[index]["price"]}",
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w700,
+                color: Colors.grey
+              ),)
+        
+            ],
           ),
-          Text(shoes[index]["tittle"],
-          style: const TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w700
-          ),),
-          Expanded(child: Text(shoes[index]["type"],
-          style: const TextStyle(
-            color: Colors.grey
-          ),)),
-          Text("\$ ${shoes[index]["price"]}",
-          style: const TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w700,
-            color: Colors.grey
-          ),)
-
-        ],
+        ),
       );
         }),
   ),
